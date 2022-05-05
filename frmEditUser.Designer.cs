@@ -30,6 +30,7 @@ namespace GymReceptionTool
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.chkbox_ShowPassword = new System.Windows.Forms.CheckBox();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -51,7 +52,6 @@ namespace GymReceptionTool
             this.rdbID = new System.Windows.Forms.RadioButton();
             this.rdbTel = new System.Windows.Forms.RadioButton();
             this.btnSearch = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -74,12 +74,22 @@ namespace GymReceptionTool
             this.groupBox1.Controls.Add(this.txtFullName);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Enabled = false;
-            this.groupBox1.Location = new System.Drawing.Point(54, 116);
+            this.groupBox1.Location = new System.Drawing.Point(46, 120);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(445, 320);
             this.groupBox1.TabIndex = 28;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Edit User";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(180, 275);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 47;
+            this.btnDelete.Text = "Delete User";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // chkbox_ShowPassword
             // 
@@ -269,21 +279,11 @@ namespace GymReceptionTool
             this.btnSearch.UseVisualStyleBackColor = true;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(180, 275);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 47;
-            this.btnDelete.Text = "Delete User";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
             // frmEditUser
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(535, 491);
+            this.ClientSize = new System.Drawing.Size(535, 467);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.rdbTel);
             this.Controls.Add(this.rdbID);

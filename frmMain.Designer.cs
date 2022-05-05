@@ -57,6 +57,7 @@ namespace GymReceptionTool
             this.btwNewPayment = new System.Windows.Forms.Button();
             this.btnEntry = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.btnAddMemberPhoto = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -67,19 +68,20 @@ namespace GymReceptionTool
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnAddMemberPhoto);
             this.groupBox1.Controls.Add(this.btnViewMember);
             this.groupBox1.Controls.Add(this.btnEditMember);
             this.groupBox1.Controls.Add(this.btnAddNewMember);
             this.groupBox1.Location = new System.Drawing.Point(23, 21);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(270, 131);
+            this.groupBox1.Size = new System.Drawing.Size(270, 157);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Members";
             // 
             // btnViewMember
             // 
-            this.btnViewMember.Location = new System.Drawing.Point(50, 86);
+            this.btnViewMember.Location = new System.Drawing.Point(50, 114);
             this.btnViewMember.Name = "btnViewMember";
             this.btnViewMember.Size = new System.Drawing.Size(169, 26);
             this.btnViewMember.TabIndex = 3;
@@ -89,7 +91,7 @@ namespace GymReceptionTool
             // 
             // btnEditMember
             // 
-            this.btnEditMember.Location = new System.Drawing.Point(50, 54);
+            this.btnEditMember.Location = new System.Drawing.Point(50, 83);
             this.btnEditMember.Name = "btnEditMember";
             this.btnEditMember.Size = new System.Drawing.Size(169, 26);
             this.btnEditMember.TabIndex = 2;
@@ -99,7 +101,7 @@ namespace GymReceptionTool
             // 
             // btnAddNewMember
             // 
-            this.btnAddNewMember.Location = new System.Drawing.Point(50, 19);
+            this.btnAddNewMember.Location = new System.Drawing.Point(50, 15);
             this.btnAddNewMember.Name = "btnAddNewMember";
             this.btnAddNewMember.Size = new System.Drawing.Size(169, 29);
             this.btnAddNewMember.TabIndex = 1;
@@ -111,7 +113,7 @@ namespace GymReceptionTool
             // 
             this.groupBox2.Controls.Add(this.btnEditInstructor);
             this.groupBox2.Controls.Add(this.btnAddNewInstructor);
-            this.groupBox2.Location = new System.Drawing.Point(23, 158);
+            this.groupBox2.Location = new System.Drawing.Point(23, 184);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(270, 97);
             this.groupBox2.TabIndex = 4;
@@ -173,6 +175,7 @@ namespace GymReceptionTool
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "QuickWatch";
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // lblBalanceOP
             // 
@@ -260,7 +263,7 @@ namespace GymReceptionTool
             this.groupBox4.Controls.Add(this.btnAddtoMember);
             this.groupBox4.Controls.Add(this.btnEditMembership);
             this.groupBox4.Controls.Add(this.btnCreateMembership);
-            this.groupBox4.Location = new System.Drawing.Point(23, 269);
+            this.groupBox4.Location = new System.Drawing.Point(23, 295);
             this.groupBox4.Name = "groupBox4";
             this.groupBox4.Size = new System.Drawing.Size(270, 134);
             this.groupBox4.TabIndex = 5;
@@ -301,7 +304,7 @@ namespace GymReceptionTool
             // 
             this.groupBox5.Controls.Add(this.btnViewMemberPayments);
             this.groupBox5.Controls.Add(this.btwNewPayment);
-            this.groupBox5.Location = new System.Drawing.Point(23, 418);
+            this.groupBox5.Location = new System.Drawing.Point(23, 444);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(270, 97);
             this.groupBox5.TabIndex = 6;
@@ -347,6 +350,16 @@ namespace GymReceptionTool
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnAddMemberPhoto
+            // 
+            this.btnAddMemberPhoto.Location = new System.Drawing.Point(51, 49);
+            this.btnAddMemberPhoto.Name = "btnAddMemberPhoto";
+            this.btnAddMemberPhoto.Size = new System.Drawing.Size(169, 29);
+            this.btnAddMemberPhoto.TabIndex = 4;
+            this.btnAddMemberPhoto.Text = "Add Member Photo";
+            this.btnAddMemberPhoto.UseVisualStyleBackColor = true;
+            this.btnAddMemberPhoto.Click += new System.EventHandler(this.btnAddMemberPhoto_Click);
             // 
             // frmMain
             // 
@@ -407,5 +420,6 @@ namespace GymReceptionTool
         private System.Windows.Forms.Label lblSurnameOP;
         private System.Windows.Forms.Label lblNameOP;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button btnAddMemberPhoto;
     }
 }

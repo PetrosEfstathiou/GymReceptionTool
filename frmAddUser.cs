@@ -46,5 +46,10 @@ namespace GymReceptionTool
             myNewForm.Visible = true;
             this.Hide();
         }
+
+        private void frmAddUser_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -182,6 +182,7 @@ namespace GymReceptionTool
             this.Controls.Add(this.label1);
             this.Name = "frmAddUser";
             this.Text = "Add User";
+            this.Load += new System.EventHandler(this.frmAddUser_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

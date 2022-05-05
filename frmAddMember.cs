@@ -46,6 +46,7 @@ namespace GymReceptionTool
             {
                 DataAccess db = new DataAccess();
                 Member member = new Member();
+                
                 member.Name = txtName.Text;
                 member.Surname = txtSurname.Text;
                 member.JoinDate = DateTime.Today;
@@ -78,5 +79,7 @@ namespace GymReceptionTool
 
             this.Hide();
         }
+
+
     }
 }

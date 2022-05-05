@@ -13,6 +13,7 @@ namespace GymReceptionTool
 {
     public partial class frmMain : Form
     {
+        public string pathFolder = Application.StartupPath + @"\ImageCapture\";
         public frmMain()
         {
             InitializeComponent();
@@ -169,13 +170,33 @@ namespace GymReceptionTool
             }
             catch (Exception Ex) { };
 
-
-
+            try
+            {
+                pbOP.ImageLocation = pathFolder + @"Member" + onpremises[index].ID.ToString() + ".bmp";
             }
+            catch (Exception Ex) { };
+            
+
+
+
+         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+
+
+        private void btnAddMemberPhoto_Click(object sender, EventArgs e)
+        {
+            frmCamCap myNewForm = new frmCamCap();
+            myNewForm.Visible = true;
+        }
+
+        private void groupBox3_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
