@@ -22,7 +22,7 @@ namespace GymReceptionTool
         {
             frmEditMember myNewForm = new frmEditMember();
             myNewForm.Visible = true;
-            this.Hide();
+
         }
 
         private void frmMain_Load(object sender, EventArgs e)

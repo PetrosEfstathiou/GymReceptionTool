@@ -77,8 +77,7 @@ namespace GymReceptionTool
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-            frmMain myNewForm = new frmMain();
-            myNewForm.Visible = true;
+
             this.Hide();
         }
 
