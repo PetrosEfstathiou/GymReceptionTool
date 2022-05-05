@@ -193,8 +193,7 @@ namespace GymReceptionTool
         {
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.cnnstring("GymReceptionTool")))
             {
-                connection.Execute($"UPDATE Members SET Name = '" + member.Name + "',Surname = '" + member.Surname + "',JoinDate='" + member.JoinDate + "',MembershipExp='" + member.MembershipExp 
-                    + "',Age='" + member.Age + "',Address='" + member.Address + "',Tel = '" + member.Tel + "',email='" + member.email + "',Balance='" + member.Balance +
+                connection.Execute($"UPDATE Members SET Name = '" + member.Name + "',Surname = '" + member.Surname + "',Age='" + member.Age + "',Address='" + member.Address + "',Tel = '" + member.Tel + "',email='" + member.email + "',Balance='" + member.Balance +
                     "',Gender = '" + member.Gender + "',UserRegistered='" + member.UserRegistered + "',Instructor='" + member.Instructor + "',MembershipID='" + member.MembershipID + "' WHERE (ID='" + member.ID + "')");
 
             }

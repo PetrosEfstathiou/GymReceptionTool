@@ -57,6 +57,8 @@ namespace GymReceptionTool
             this.btwNewPayment = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnEntry = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -143,7 +145,7 @@ namespace GymReceptionTool
             this.lstOnPremises.FormattingEnabled = true;
             this.lstOnPremises.Location = new System.Drawing.Point(324, 40);
             this.lstOnPremises.Name = "lstOnPremises";
-            this.lstOnPremises.Size = new System.Drawing.Size(404, 472);
+            this.lstOnPremises.Size = new System.Drawing.Size(404, 355);
             this.lstOnPremises.TabIndex = 5;
             // 
             // label1
@@ -346,11 +348,31 @@ namespace GymReceptionTool
             this.label5.TabIndex = 9;
             this.label5.Text = "Balance:";
             // 
+            // btnEntry
+            // 
+            this.btnEntry.Location = new System.Drawing.Point(353, 418);
+            this.btnEntry.Name = "btnEntry";
+            this.btnEntry.Size = new System.Drawing.Size(112, 97);
+            this.btnEntry.TabIndex = 8;
+            this.btnEntry.Text = "Entry";
+            this.btnEntry.UseVisualStyleBackColor = true;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(578, 418);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(112, 97);
+            this.btnExit.TabIndex = 9;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = true;
+            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1126, 555);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.btnEntry);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
@@ -403,5 +425,7 @@ namespace GymReceptionTool
         private System.Windows.Forms.Button btwNewPayment;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnEntry;
+        private System.Windows.Forms.Button btnExit;
     }
 }
