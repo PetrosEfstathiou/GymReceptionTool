@@ -29,16 +29,14 @@ namespace GymReceptionTool
                 ms.MembershipPeriod = int.Parse(txtDuration.Text);
                 db.InsertMembership(ms);
                 MessageBox.Show("Membership Succesfully Added!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                frmMain myNewForm = new frmMain();
-                myNewForm.Visible = true;
+
                 this.Hide();
             }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            frmLogin myNewForm = new frmLogin();
-            myNewForm.Visible = true;
+
             this.Hide();
         }
     }

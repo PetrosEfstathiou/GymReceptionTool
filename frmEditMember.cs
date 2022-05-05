@@ -79,8 +79,7 @@ namespace GymReceptionTool
 
             MessageBox.Show("Member Succesfully Updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            frmMain myNewForm = new frmMain();
-            myNewForm.Visible = true;
+
             this.Hide();
         }
     
@@ -155,15 +154,13 @@ namespace GymReceptionTool
             db.DeleteMember(member);
             MessageBox.Show("Member Succesfully Delete!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            frmMain myNewForm = new frmMain();
-            myNewForm.Visible = true;
+
             this.Hide();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            frmMain myNewForm = new frmMain();
-            myNewForm.Visible = true;
+
             this.Hide();
         }
 

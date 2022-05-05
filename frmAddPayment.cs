@@ -33,8 +33,7 @@ namespace GymReceptionTool
                 pay.UserID = frmLogin.user;
                 db.AddPaymentMember(pay,mb);
                 MessageBox.Show("Payment Succesfully Added to Member!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                frmMain myNewForm = new frmMain();
-                myNewForm.Visible = true;
+
                 this.Hide();
             }
         }
@@ -90,8 +89,7 @@ namespace GymReceptionTool
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            frmMain myNewForm = new frmMain();
-            myNewForm.Visible = true;
+
             this.Hide();
         }
     }

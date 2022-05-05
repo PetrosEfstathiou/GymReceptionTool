@@ -103,8 +103,7 @@ namespace GymReceptionTool
                
                 db.AddMembershipMember(ms,mb);
                 MessageBox.Show("Membership Succesfully Added to Member!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                frmMain myNewForm = new frmMain();
-                myNewForm.Visible = true;
+
                 this.Hide();
             }
         }
@@ -116,8 +115,7 @@ namespace GymReceptionTool
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            frmMain myNewForm = new frmMain();
-            myNewForm.Visible = true;
+
             this.Hide();
         }
     }

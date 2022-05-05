@@ -30,6 +30,7 @@ namespace GymReceptionTool
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.txtSurname = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -43,7 +44,6 @@ namespace GymReceptionTool
             this.txtName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
-            this.btnDelete = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,6 +70,16 @@ namespace GymReceptionTool
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Edit Instructor";
             // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(186, 249);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(108, 23);
+            this.btnDelete.TabIndex = 42;
+            this.btnDelete.Text = "Delete Instructor";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // txtSurname
             // 
             this.txtSurname.Location = new System.Drawing.Point(138, 82);
@@ -94,6 +104,7 @@ namespace GymReceptionTool
             this.btnCancel.TabIndex = 39;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnEdit
             // 
@@ -177,16 +188,6 @@ namespace GymReceptionTool
             this.listBox1.Size = new System.Drawing.Size(445, 199);
             this.listBox1.TabIndex = 37;
             this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(186, 249);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(108, 23);
-            this.btnDelete.TabIndex = 42;
-            this.btnDelete.Text = "Delete Instructor";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // frmEditInstructor
             // 

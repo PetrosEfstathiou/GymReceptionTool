@@ -51,8 +51,6 @@ namespace GymReceptionTool
 
             MessageBox.Show("Instructor Succesfully Updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            frmMain myNewForm = new frmMain();
-            myNewForm.Visible = true;
             this.Hide();
         }
 
@@ -85,8 +83,12 @@ namespace GymReceptionTool
             db.DeleteInstructor(instr);
             MessageBox.Show("Instructor Succesfully Deleted!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            frmMain myNewForm = new frmMain();
-            myNewForm.Visible = true;
+
+            this.Hide();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
             this.Hide();
         }
     }

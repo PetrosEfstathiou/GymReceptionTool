@@ -35,56 +35,56 @@ namespace GymReceptionTool
         {
             frmAddMember myNewForm = new frmAddMember();
             myNewForm.Visible = true;
-            this.Hide();
+            
         }
 
         private void btnViewMember_Click(object sender, EventArgs e)
         {
             frmViewMember myNewForm = new frmViewMember();
             myNewForm.Visible = true;
-            this.Hide();
+
         }
 
         private void btnAddNewInstructor_Click(object sender, EventArgs e)
         {
             frmAddInstructor myNewForm = new frmAddInstructor();
             myNewForm.Visible = true;
-            this.Hide();
+
         }
 
         private void btnEditInstructor_Click(object sender, EventArgs e)
         {
             frmEditInstructor myNewForm = new frmEditInstructor();
             myNewForm.Visible = true;
-            this.Hide();
+
         }
 
         private void btnCreateMembership_Click(object sender, EventArgs e)
         {
             frmCreateMembership myNewForm = new frmCreateMembership();
             myNewForm.Visible = true;
-            this.Hide();
+
         }
 
         private void btnEditMembership_Click(object sender, EventArgs e)
         {
             frmEditMembership myNewForm = new frmEditMembership();
             myNewForm.Visible = true;
-            this.Hide();
+
         }
 
         private void btwNewPayment_Click(object sender, EventArgs e)
         {
             frmAddPayment myNewForm = new frmAddPayment();
             myNewForm.Visible = true;
-            this.Hide();
+
         }
 
         private void btnViewMemberPayments_Click(object sender, EventArgs e)
         {
             frmViewMember myNewForm = new frmViewMember();
             myNewForm.Visible = true;
-            this.Hide();
+
         }
 
         private void btnAddtoMember_Click(object sender, EventArgs e)
@@ -92,7 +92,7 @@ namespace GymReceptionTool
             
             frmAddMembership myNewForm = new frmAddMembership();
             myNewForm.Visible = true;
-            this.Hide();
+
         }
 
         private void btnEntry_Click(object sender, EventArgs e)
@@ -172,5 +172,10 @@ namespace GymReceptionTool
 
 
             }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -33,10 +33,14 @@ namespace GymReceptionTool
 
                 MessageBox.Show("Instructor Succesfully Added!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                frmMain myNewForm = new frmMain();
-                myNewForm.Visible = true;
+
                 this.Hide();
             }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
         }
     }
 }
