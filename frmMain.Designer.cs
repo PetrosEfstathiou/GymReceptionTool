@@ -39,26 +39,24 @@ namespace GymReceptionTool
             this.lstOnPremises = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.lblBalanceOP = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.lblExpDateOP = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.lblSubscriptionOP = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.lblSurnameOP = new System.Windows.Forms.Label();
-            this.lblNameOP = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.Label2 = new System.Windows.Forms.Label();
             this.pbOP = new System.Windows.Forms.PictureBox();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.btnAddtoMember = new System.Windows.Forms.Button();
             this.btnEditMembership = new System.Windows.Forms.Button();
             this.btnCreateMembership = new System.Windows.Forms.Button();
-            this.btnAddtoMember = new System.Windows.Forms.Button();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.btnViewMemberPayments = new System.Windows.Forms.Button();
             this.btwNewPayment = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.btnEntry = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblSurnameOP = new System.Windows.Forms.Label();
+            this.lblNameOP = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -147,6 +145,7 @@ namespace GymReceptionTool
             this.lstOnPremises.Name = "lstOnPremises";
             this.lstOnPremises.Size = new System.Drawing.Size(404, 355);
             this.lstOnPremises.TabIndex = 5;
+            this.lstOnPremises.SelectedIndexChanged += new System.EventHandler(this.lstOnPremises_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -159,12 +158,10 @@ namespace GymReceptionTool
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.label4);
+            this.groupBox3.Controls.Add(this.lblBalanceOP);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Controls.Add(this.lblExpDateOP);
             this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.lblSubscriptionOP);
-            this.groupBox3.Controls.Add(this.label7);
             this.groupBox3.Controls.Add(this.lblSurnameOP);
             this.groupBox3.Controls.Add(this.lblNameOP);
             this.groupBox3.Controls.Add(this.label3);
@@ -172,78 +169,51 @@ namespace GymReceptionTool
             this.groupBox3.Controls.Add(this.pbOP);
             this.groupBox3.Location = new System.Drawing.Point(755, 21);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(345, 382);
+            this.groupBox3.Size = new System.Drawing.Size(345, 307);
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Latest Entrance:";
+            this.groupBox3.Text = "QuickWatch";
+            // 
+            // lblBalanceOP
+            // 
+            this.lblBalanceOP.AutoSize = true;
+            this.lblBalanceOP.Location = new System.Drawing.Point(100, 265);
+            this.lblBalanceOP.Name = "lblBalanceOP";
+            this.lblBalanceOP.Size = new System.Drawing.Size(33, 13);
+            this.lblBalanceOP.TabIndex = 10;
+            this.lblBalanceOP.Text = "None";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(28, 265);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(49, 13);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Balance:";
             // 
             // lblExpDateOP
             // 
             this.lblExpDateOP.AutoSize = true;
-            this.lblExpDateOP.Location = new System.Drawing.Point(80, 314);
+            this.lblExpDateOP.Location = new System.Drawing.Point(100, 243);
             this.lblExpDateOP.Name = "lblExpDateOP";
-            this.lblExpDateOP.Size = new System.Drawing.Size(35, 13);
+            this.lblExpDateOP.Size = new System.Drawing.Size(33, 13);
             this.lblExpDateOP.TabIndex = 8;
-            this.lblExpDateOP.Text = "label8";
+            this.lblExpDateOP.Text = "None";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(7, 314);
+            this.label9.Location = new System.Drawing.Point(26, 242);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(57, 13);
             this.label9.TabIndex = 7;
             this.label9.Text = "Exp. Date:";
             // 
-            // lblSubscriptionOP
-            // 
-            this.lblSubscriptionOP.AutoSize = true;
-            this.lblSubscriptionOP.Location = new System.Drawing.Point(80, 291);
-            this.lblSubscriptionOP.Name = "lblSubscriptionOP";
-            this.lblSubscriptionOP.Size = new System.Drawing.Size(35, 13);
-            this.lblSubscriptionOP.TabIndex = 6;
-            this.lblSubscriptionOP.Text = "label6";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 291);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(68, 13);
-            this.label7.TabIndex = 5;
-            this.label7.Text = "Subscription:";
-            // 
-            // lblSurnameOP
-            // 
-            this.lblSurnameOP.AutoSize = true;
-            this.lblSurnameOP.Location = new System.Drawing.Point(80, 268);
-            this.lblSurnameOP.Name = "lblSurnameOP";
-            this.lblSurnameOP.Size = new System.Drawing.Size(35, 13);
-            this.lblSurnameOP.TabIndex = 4;
-            this.lblSurnameOP.Text = "label4";
-            // 
-            // lblNameOP
-            // 
-            this.lblNameOP.AutoSize = true;
-            this.lblNameOP.Location = new System.Drawing.Point(80, 242);
-            this.lblNameOP.Name = "lblNameOP";
-            this.lblNameOP.Size = new System.Drawing.Size(35, 13);
-            this.lblNameOP.TabIndex = 3;
-            this.lblNameOP.Text = "label5";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(7, 268);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Surname:";
-            // 
             // Label2
             // 
             this.Label2.AutoSize = true;
-            this.Label2.Location = new System.Drawing.Point(7, 242);
+            this.Label2.Location = new System.Drawing.Point(26, 198);
             this.Label2.Name = "Label2";
             this.Label2.Size = new System.Drawing.Size(38, 13);
             this.Label2.TabIndex = 1;
@@ -251,9 +221,10 @@ namespace GymReceptionTool
             // 
             // pbOP
             // 
-            this.pbOP.Location = new System.Drawing.Point(7, 20);
+            this.pbOP.Location = new System.Drawing.Point(48, 19);
             this.pbOP.Name = "pbOP";
-            this.pbOP.Size = new System.Drawing.Size(332, 205);
+            this.pbOP.Size = new System.Drawing.Size(248, 165);
+            this.pbOP.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbOP.TabIndex = 0;
             this.pbOP.TabStop = false;
             // 
@@ -268,6 +239,16 @@ namespace GymReceptionTool
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Membership";
+            // 
+            // btnAddtoMember
+            // 
+            this.btnAddtoMember.Location = new System.Drawing.Point(50, 86);
+            this.btnAddtoMember.Name = "btnAddtoMember";
+            this.btnAddtoMember.Size = new System.Drawing.Size(169, 29);
+            this.btnAddtoMember.TabIndex = 3;
+            this.btnAddtoMember.Text = "Add to Member";
+            this.btnAddtoMember.UseVisualStyleBackColor = true;
+            this.btnAddtoMember.Click += new System.EventHandler(this.btnAddtoMember_Click);
             // 
             // btnEditMembership
             // 
@@ -288,16 +269,6 @@ namespace GymReceptionTool
             this.btnCreateMembership.Text = "Create Membership";
             this.btnCreateMembership.UseVisualStyleBackColor = true;
             this.btnCreateMembership.Click += new System.EventHandler(this.btnCreateMembership_Click);
-            // 
-            // btnAddtoMember
-            // 
-            this.btnAddtoMember.Location = new System.Drawing.Point(50, 86);
-            this.btnAddtoMember.Name = "btnAddtoMember";
-            this.btnAddtoMember.Size = new System.Drawing.Size(169, 29);
-            this.btnAddtoMember.TabIndex = 3;
-            this.btnAddtoMember.Text = "Add to Member";
-            this.btnAddtoMember.UseVisualStyleBackColor = true;
-            this.btnAddtoMember.Click += new System.EventHandler(this.btnAddtoMember_Click);
             // 
             // groupBox5
             // 
@@ -330,24 +301,6 @@ namespace GymReceptionTool
             this.btwNewPayment.UseVisualStyleBackColor = true;
             this.btwNewPayment.Click += new System.EventHandler(this.btwNewPayment_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(80, 334);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 13);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "label6";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(7, 334);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 13);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Balance:";
-            // 
             // btnEntry
             // 
             this.btnEntry.Location = new System.Drawing.Point(353, 418);
@@ -356,6 +309,7 @@ namespace GymReceptionTool
             this.btnEntry.TabIndex = 8;
             this.btnEntry.Text = "Entry";
             this.btnEntry.UseVisualStyleBackColor = true;
+            this.btnEntry.Click += new System.EventHandler(this.btnEntry_Click);
             // 
             // btnExit
             // 
@@ -365,6 +319,33 @@ namespace GymReceptionTool
             this.btnExit.TabIndex = 9;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(26, 220);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "Surname:";
+            // 
+            // lblSurnameOP
+            // 
+            this.lblSurnameOP.AutoSize = true;
+            this.lblSurnameOP.Location = new System.Drawing.Point(100, 220);
+            this.lblSurnameOP.Name = "lblSurnameOP";
+            this.lblSurnameOP.Size = new System.Drawing.Size(33, 13);
+            this.lblSurnameOP.TabIndex = 4;
+            this.lblSurnameOP.Text = "None";
+            // 
+            // lblNameOP
+            // 
+            this.lblNameOP.AutoSize = true;
+            this.lblNameOP.Location = new System.Drawing.Point(100, 198);
+            this.lblNameOP.Name = "lblNameOP";
+            this.lblNameOP.Size = new System.Drawing.Size(33, 13);
+            this.lblNameOP.TabIndex = 3;
+            this.lblNameOP.Text = "None";
             // 
             // frmMain
             // 
@@ -409,11 +390,6 @@ namespace GymReceptionTool
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label lblExpDateOP;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label lblSubscriptionOP;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label lblSurnameOP;
-        private System.Windows.Forms.Label lblNameOP;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label Label2;
         private System.Windows.Forms.PictureBox pbOP;
         private System.Windows.Forms.GroupBox groupBox4;
@@ -423,9 +399,12 @@ namespace GymReceptionTool
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Button btnViewMemberPayments;
         private System.Windows.Forms.Button btwNewPayment;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblBalanceOP;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnEntry;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Label lblSurnameOP;
+        private System.Windows.Forms.Label lblNameOP;
+        private System.Windows.Forms.Label label3;
     }
 }

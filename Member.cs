@@ -31,5 +31,15 @@ namespace GymReceptionTool
 
         }
 
+        public string onPremises
+        {
+            get
+            {
+                return $"({ID}) {Name} {Surname}";
+            }
+
+        }
+
+
     }
 }
