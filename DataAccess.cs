@@ -319,13 +319,13 @@ namespace GymReceptionTool
         public void AddMembershipMember(Membership ms,Member mb)
         {
             DateTime MembershipExp = mb.MembershipExp;
-        MembershipExp.AddMonths(ms.MembershipPeriod);
+            var exp = MembershipExp.AddMonths(ms.MembershipPeriod);
             int Balance = mb.Balance - ms.MembershipAmount;
             
 
             using (IDbConnection connection = new System.Data.SqlClient.SqlConnection(Helper.cnnstring("GymReceptionTool")))
             {
-                connection.Execute($"UPDATE Members SET MembershipExp = '" + MembershipExp + "',Balance = '" + Balance +
+                connection.Execute($"UPDATE Members SET MembershipExp = '" + exp + "',Balance = '" + Balance +
                     "',MembershipID='" + ms.ID + "' WHERE (ID='" + mb.ID + "')");
 
             }
