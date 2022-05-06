@@ -282,9 +282,13 @@ namespace GymReceptionTool
 
         private void button3_Click(object sender, EventArgs e)
         {
-
-            System.IO.File.Move(pathFolder+@"\temp.bmp", pathFolder + @"\Member"+activedit.ID+".bmp");
+            CloseCurrentVideoSource();
+            try
+            {
+                System.IO.File.Move(pathFolder + @"\temp.bmp", pathFolder + @"\Member" + activedit.ID + ".bmp");
+            }
+            catch (Exception Ex) { };
             this.Hide();
-        }
+            }
     }
 }
