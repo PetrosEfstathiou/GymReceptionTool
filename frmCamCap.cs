@@ -284,6 +284,7 @@ namespace GymReceptionTool
         {
 
             System.IO.File.Move(pathFolder+@"\temp.bmp", pathFolder + @"\Member"+activedit.ID+".bmp");
+            this.Hide();
         }
     }
 }
