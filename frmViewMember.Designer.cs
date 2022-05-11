@@ -424,9 +424,10 @@ namespace GymReceptionTool
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(501, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(531, 17);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(495, 260);
+            this.pictureBox1.Size = new System.Drawing.Size(422, 260);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 58;
             this.pictureBox1.TabStop = false;
             // 

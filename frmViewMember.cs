@@ -15,6 +15,7 @@ namespace GymReceptionTool
         List<Member> lbcontents = new List<Member>();
         List<Payment> Payments = new List<Payment>();
         Member activedit = new Member();
+        public string pathFolder = Application.StartupPath + @"\ImageCapture\";
         public frmViewMember()
         {
             InitializeComponent();
@@ -44,6 +45,11 @@ namespace GymReceptionTool
             Payments = db.GetPaymentbyMID(lbcontents[index].ID.ToString());
             listBox2.DataSource = Payments;
             listBox2.DisplayMember = "lbInfo";
+            try
+            {
+                pictureBox1.ImageLocation = pathFolder + @"Member" + lbcontents[index].ID.ToString() + ".bmp";
+            }
+            catch (Exception Ex) { };
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
