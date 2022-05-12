@@ -40,7 +40,7 @@ namespace GymReceptionTool
         public void populate(int index)
         {
             txtName.Text = lbcontents[index].Name;
-            txtDuration.Text = lbcontents[index].MembershipAmount.ToString();
+            txtDuration.Text = lbcontents[index].MembershipPeriod.ToString();
             DataAccess db = new DataAccess();
             txtCreatedby.Text = db.GetUserName(lbcontents[index].UserCreated.ToString());
             txtCreatedby.Enabled = false;
