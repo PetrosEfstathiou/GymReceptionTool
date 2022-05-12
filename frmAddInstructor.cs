@@ -19,7 +19,14 @@ namespace GymReceptionTool
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (true)
+
+            if (!IsNumeric(txtTelNo.Text))
+
+            {
+                MessageBox.Show("Invalid value in Telephone Number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtTelNo.Select();
+            }
+            else
             {
                 DataAccess db = new DataAccess();
                 Instructor instr = new Instructor();
@@ -37,10 +44,26 @@ namespace GymReceptionTool
                 this.Hide();
             }
         }
+        
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void txtTelNo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public bool IsNumeric(string value)
+        {
+            return value.All(char.IsNumber);
+        }
+
+        private void frmAddInstructor_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

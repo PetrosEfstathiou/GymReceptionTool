@@ -29,8 +29,6 @@ namespace GymReceptionTool
             lbcontents = ms;
             listBox1.DataSource = ms;
             listBox1.DisplayMember = "FullInfo";
-
-
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -54,22 +52,37 @@ namespace GymReceptionTool
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            DataAccess db = new DataAccess();
-            Membership ms = new Membership();
-            ms.Name = txtName.Text;
-            ms.ID = activedit.ID;
-            ms.MembershipAmount = int.Parse(txtAmount.Text);
-            ms.MembershipPeriod = int.Parse(txtDuration.Text);
-            ms.UserCreated = activedit.UserCreated;
+            if (!IsNumeric(txtAmount.Text))
 
-            db.UpdateMembership(ms);
+            {
+                MessageBox.Show("Invalid value in Amount", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtAmount.Select();
+            }
 
-            MessageBox.Show("Membership Succesfully Updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else if (!IsNumeric(txtDuration.Text))
+
+            {
+                MessageBox.Show("Invalid value in Membership Duration", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtDuration.Select();
+            }
+            else
+            {
+                DataAccess db = new DataAccess();
+                Membership ms = new Membership();
+                ms.Name = txtName.Text;
+                ms.ID = activedit.ID;
+                ms.MembershipAmount = int.Parse(txtAmount.Text);
+                ms.MembershipPeriod = int.Parse(txtDuration.Text);
+                ms.UserCreated = activedit.UserCreated;
+
+                db.UpdateMembership(ms);
+
+                MessageBox.Show("Membership Succesfully Updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
-            this.Hide();
+                this.Hide();
+            }
         }
-
         private void btnDelete_Click(object sender, EventArgs e)
         {
             DataAccess db = new DataAccess();
@@ -87,6 +100,15 @@ namespace GymReceptionTool
 
             this.Hide();
         }
-    }
+
+        private void txtDuration_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+        public bool IsNumeric(string value)
+        {
+            return value.All(char.IsNumber);
+        }
     }
 
+}

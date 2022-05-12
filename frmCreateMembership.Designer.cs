@@ -45,6 +45,7 @@ namespace GymReceptionTool
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(267, 20);
             this.txtAmount.TabIndex = 41;
+            this.txtAmount.TextChanged += new System.EventHandler(this.txtAmount_TextChanged);
             // 
             // label7
             // 
@@ -123,6 +124,7 @@ namespace GymReceptionTool
             this.Controls.Add(this.label1);
             this.Name = "frmCreateMembership";
             this.Text = "Create Membership";
+            this.Load += new System.EventHandler(this.frmCreateMembership_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

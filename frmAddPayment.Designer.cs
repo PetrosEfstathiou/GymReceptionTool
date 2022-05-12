@@ -57,13 +57,16 @@ namespace GymReceptionTool
             // txtAmount
             // 
             this.txtAmount.Location = new System.Drawing.Point(99, 153);
+            this.txtAmount.MaxLength = 20;
             this.txtAmount.Name = "txtAmount";
             this.txtAmount.Size = new System.Drawing.Size(100, 20);
             this.txtAmount.TabIndex = 48;
+            this.txtAmount.TextChanged += new System.EventHandler(this.txtAmount_TextChanged);
             // 
             // txtNote
             // 
             this.txtNote.Location = new System.Drawing.Point(99, 187);
+            this.txtNote.MaxLength = 20;
             this.txtNote.Name = "txtNote";
             this.txtNote.Size = new System.Drawing.Size(205, 20);
             this.txtNote.TabIndex = 50;
@@ -150,6 +153,7 @@ namespace GymReceptionTool
             // 
             this.txtSearchbyTel.Enabled = false;
             this.txtSearchbyTel.Location = new System.Drawing.Point(78, 48);
+            this.txtSearchbyTel.MaxLength = 20;
             this.txtSearchbyTel.Name = "txtSearchbyTel";
             this.txtSearchbyTel.Size = new System.Drawing.Size(100, 20);
             this.txtSearchbyTel.TabIndex = 57;
@@ -167,6 +171,7 @@ namespace GymReceptionTool
             // 
             this.txtSearchbyID.Enabled = false;
             this.txtSearchbyID.Location = new System.Drawing.Point(78, 19);
+            this.txtSearchbyID.MaxLength = 20;
             this.txtSearchbyID.Name = "txtSearchbyID";
             this.txtSearchbyID.Size = new System.Drawing.Size(100, 20);
             this.txtSearchbyID.TabIndex = 55;
@@ -185,6 +190,7 @@ namespace GymReceptionTool
             this.Controls.Add(this.label1);
             this.Name = "frmAddPayment";
             this.Text = "Add Payment to Member";
+            this.Load += new System.EventHandler(this.frmAddPayment_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

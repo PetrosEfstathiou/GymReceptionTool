@@ -21,8 +21,16 @@ namespace GymReceptionTool
 
         private void btnPayment_Click(object sender, EventArgs e)
         {
-            if (true)
+
+            if (!IsNumeric(txtAmount.Text))
+
             {
+                MessageBox.Show("Invalid value in Amount", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtAmount.Select();
+            }
+            else
+            {
+
                 DataAccess db = new DataAccess();
                 Payment pay = new Payment();
                 pay.Amount = int.Parse(txtAmount.Text);
@@ -31,7 +39,7 @@ namespace GymReceptionTool
                 pay.PDate = DateTime.Today;
                 pay.PTime = DateTime.Now;
                 pay.UserID = frmLogin.user;
-                db.AddPaymentMember(pay,mb);
+                db.AddPaymentMember(pay, mb);
                 MessageBox.Show("Payment Succesfully Added to Member!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 this.Hide();
@@ -91,6 +99,21 @@ namespace GymReceptionTool
         {
 
             this.Hide();
+        }
+
+        private void frmAddPayment_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAmount_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public bool IsNumeric(string value)
+        {
+            return value.All(char.IsNumber);
         }
     }
 }

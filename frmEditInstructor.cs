@@ -38,20 +38,31 @@ namespace GymReceptionTool
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            DataAccess db = new DataAccess();
-            Instructor instr = new Instructor();
-            instr.ID = activedit.ID;
-            instr.Name = txtName.Text;
-            instr.Surname = txtSurname.Text;
-            instr.email = txtemail.Text;
-            instr.UserRegistered = activedit.UserRegistered;
-            instr.Tel = txtTelNo.Text;
-            instr.Address = txtAddress.Text;
-            db.InsertInstr(instr);
 
-            MessageBox.Show("Instructor Succesfully Updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (!IsNumeric(txtTelNo.Text))
 
-            this.Hide();
+            {
+                MessageBox.Show("Invalid value in Telephone Number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtTelNo.Select();
+            }
+            else
+            {
+
+                DataAccess db = new DataAccess();
+                Instructor instr = new Instructor();
+                instr.ID = activedit.ID;
+                instr.Name = txtName.Text;
+                instr.Surname = txtSurname.Text;
+                instr.email = txtemail.Text;
+                instr.UserRegistered = activedit.UserRegistered;
+                instr.Tel = txtTelNo.Text;
+                instr.Address = txtAddress.Text;
+                db.InsertInstr(instr);
+
+                MessageBox.Show("Instructor Succesfully Updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                this.Hide();
+            }
         }
 
         private void rdbTel_CheckedChanged_1(object sender, EventArgs e)
@@ -90,6 +101,16 @@ namespace GymReceptionTool
         private void btnCancel_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void txtTelNo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public bool IsNumeric(string value)
+        {
+            return value.All(char.IsNumber);
         }
     }
 }

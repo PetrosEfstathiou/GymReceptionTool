@@ -76,22 +76,31 @@ namespace GymReceptionTool
 
         private void btnEdit_Click_1(object sender, EventArgs e)
         {
-            DataAccess db = new DataAccess();
-            User user = new User();
-            user.ID = activedit.ID;
-            user.Name = txtFullName.Text;
-            user.Address = txtAddress.Text;
-            user.DateAdded = activedit.DateAdded;
-            user.Password = txtPassword.Text;
-            user.Tel = txtTelNo.Text;
-            user.Username = txtUsername.Text;
-            db.UpdateUser(user);
-            MessageBox.Show("User Succesfully Updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (!IsNumeric(txtTelNo.Text))
 
-            frmLogin myNewForm = new frmLogin();
-            myNewForm.Visible = true;
-            this.Hide();
+            {
+                MessageBox.Show("Invalid value in Telephone Number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtTelNo.Select();
+            }
+            else
+            {
 
+                DataAccess db = new DataAccess();
+                User user = new User();
+                user.ID = activedit.ID;
+                user.Name = txtFullName.Text;
+                user.Address = txtAddress.Text;
+                user.DateAdded = activedit.DateAdded;
+                user.Password = txtPassword.Text;
+                user.Tel = txtTelNo.Text;
+                user.Username = txtUsername.Text;
+                db.UpdateUser(user);
+                MessageBox.Show("User Succesfully Updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                frmLogin myNewForm = new frmLogin();
+                myNewForm.Visible = true;
+                this.Hide();
+            }
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -144,6 +153,10 @@ namespace GymReceptionTool
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+        public bool IsNumeric(string value)
+        {
+            return value.All(char.IsNumber);
         }
     }
 }

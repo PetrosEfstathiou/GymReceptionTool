@@ -42,11 +42,19 @@ namespace GymReceptionTool
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (true)
+
+            if (!IsNumeric(txtTelNo.Text))
+
             {
+                MessageBox.Show("Invalid value in Telephone Number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtTelNo.Select();
+            }
+            else
+            {
+
                 DataAccess db = new DataAccess();
                 Member member = new Member();
-                
+
                 member.Name = txtName.Text;
                 member.Surname = txtSurname.Text;
                 member.JoinDate = DateTime.Today;
@@ -55,7 +63,7 @@ namespace GymReceptionTool
                 member.Address = txtAddress.Text;
                 member.Tel = txtTelNo.Text;
                 member.email = txtemail.Text;
-                member.Balance =-registration.MembershipAmount;
+                member.Balance = -registration.MembershipAmount;
                 member.Gender = cmbGender.SelectedItem.ToString();
                 member.UserRegistered = frmLogin.user;
                 member.Instructor = Instructors[listBox1.SelectedIndex].ID;
@@ -80,6 +88,19 @@ namespace GymReceptionTool
             this.Hide();
         }
 
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
 
+        }
+
+        private void txtTelNo_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public bool IsNumeric(string value)
+        {
+            return value.All(char.IsNumber);
+        }
     }
 }

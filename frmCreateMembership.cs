@@ -19,8 +19,23 @@ namespace GymReceptionTool
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            if (true)
+
+
+            if (!IsNumeric(txtAmount.Text))
+
             {
+                MessageBox.Show("Invalid value in Amount ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtAmount.Select();
+            }
+            else if (!IsNumeric(txtDuration.Text))
+
+            {
+                MessageBox.Show("Invalid value in Duration (months) ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtDuration.Select();
+            }
+            else
+            {
+
                 DataAccess db = new DataAccess();
                 Membership ms = new Membership();
                 ms.Name = txtName.Text;
@@ -32,12 +47,28 @@ namespace GymReceptionTool
 
                 this.Hide();
             }
+        
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
 
             this.Hide();
+        }
+
+        private void frmCreateMembership_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtAmount_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        public bool IsNumeric(string value)
+        {
+            return value.All(char.IsNumber);
         }
     }
 }

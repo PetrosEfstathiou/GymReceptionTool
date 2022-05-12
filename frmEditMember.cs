@@ -60,29 +60,37 @@ namespace GymReceptionTool
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-            DataAccess db = new DataAccess();
-            Member member = new Member();
-            member.Name = txtName.Text;
-            member.Surname = txtSurname.Text;
-            member.JoinDate = activedit.JoinDate;
-            member.MembershipExp = activedit.MembershipExp;
-            member.Age = int.Parse(txtAge.Text);
-            member.Address = txtAddress.Text;
-            member.Tel = txtTelNo.Text;
-            member.email = txtemail.Text;
-            member.Balance = activedit.Balance;
-            member.Gender = cmbGender.SelectedItem.ToString();
-            member.UserRegistered = activedit.UserRegistered;
-            member.Instructor = Instructors[listBox1.SelectedIndex].ID;
-            member.MembershipID =activedit.MembershipID;
-            db.UpdateMember(member);
+            if (!IsNumeric(txtTelNo.Text))
+            {
+                MessageBox.Show("Invalid value in Telephone Number", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtTelNo.Select();
+            }
+            else
+            {
+                DataAccess db = new DataAccess();
+                Member member = new Member();
+                member.Name = txtName.Text;
+                member.Surname = txtSurname.Text;
+                member.JoinDate = activedit.JoinDate;
+                member.MembershipExp = activedit.MembershipExp;
+                member.Age = int.Parse(txtAge.Text);
+                member.Address = txtAddress.Text;
+                member.Tel = txtTelNo.Text;
+                member.email = txtemail.Text;
+                member.Balance = activedit.Balance;
+                member.Gender = cmbGender.SelectedItem.ToString();
+                member.UserRegistered = activedit.UserRegistered;
+                member.Instructor = Instructors[listBox1.SelectedIndex].ID;
+                member.MembershipID = activedit.MembershipID;
+                db.UpdateMember(member);
 
-            MessageBox.Show("Member Succesfully Updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Member Succesfully Updated!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
-            this.Hide();
+                this.Hide();
+            }
         }
-    
+
 
         private void rdbTel_CheckedChanged_1(object sender, EventArgs e)
         {
@@ -182,6 +190,11 @@ namespace GymReceptionTool
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        public bool IsNumeric(string value)
+        {
+            return value.All(char.IsNumber);
         }
     }
 }

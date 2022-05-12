@@ -160,9 +160,11 @@ namespace GymReceptionTool
             // 
             this.txtSearchbyTel.Enabled = false;
             this.txtSearchbyTel.Location = new System.Drawing.Point(309, 55);
+            this.txtSearchbyTel.MaxLength = 20;
             this.txtSearchbyTel.Name = "txtSearchbyTel";
             this.txtSearchbyTel.Size = new System.Drawing.Size(100, 20);
             this.txtSearchbyTel.TabIndex = 51;
+            this.txtSearchbyTel.TextChanged += new System.EventHandler(this.txtSearchbyTel_TextChanged);
             // 
             // listBox1
             // 
@@ -177,6 +179,7 @@ namespace GymReceptionTool
             // 
             this.txtSearchbyID.Enabled = false;
             this.txtSearchbyID.Location = new System.Drawing.Point(309, 26);
+            this.txtSearchbyID.MaxLength = 20;
             this.txtSearchbyID.Name = "txtSearchbyID";
             this.txtSearchbyID.Size = new System.Drawing.Size(100, 20);
             this.txtSearchbyID.TabIndex = 49;
